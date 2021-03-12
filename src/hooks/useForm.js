@@ -6,7 +6,8 @@ const useForm = (initialValue) => {
 	const [values, setValues] = useState(initialValue);
 
 	const handleChanges = (e) => {
-		setValues({ ...values, [e.target.name]: e.target.value });
+		const { name, value } = e.target;
+		setValues({ ...values, [name]: value });
 	};
 
 	const handleSubmit = (e) => {
